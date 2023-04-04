@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Alert, Button, Text,TouchableHighlight, View, Image, SafeAreaView } from 'react-native';
 
 export default function App() {
 
@@ -7,10 +7,28 @@ export default function App() {
     console.log("text pressed")
   }
 
+  const handleButton = () => {
+    Alert.alert("My Title", "My Message", [
+      {text: "Yes"}, {text: "No"}])
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello World!</Text>
-      <Image source={require('./assets/favicon.png')}/>
+      <Button 
+        color="orange"
+        title="click me" 
+        onPress={handleButton}
+      />
+      <TouchableHighlight onPress={handlePress}>
+      <Image 
+        source={{
+          width: 200,
+          height: 300,
+          uri: "https://picsum.photos/200/300"
+        }}
+      />
+      </TouchableHighlight>
       <Text numberOfLines={1} onPress={handlePress}>This is a demonstration of how text can be truncated using the 'numberOfLines' attribute</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
