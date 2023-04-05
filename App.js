@@ -35,11 +35,24 @@ export default function App() {
   return (
     <SafeAreaView style={[styles.container, containerStyle]}>
       <View style={{
-        backgroundColor: "blue",
+        backgroundColor: "dodgerblue",
+        flex: 1,
         width: '100%',
         height: orientation === 'landscape' ? '100%' : '30%',
         }}>
-
+          <View style={{
+            backgroundColor: 'dodgerblue',
+            flex: 1,
+            // alignSelf: 'flex-start', //this is a property that works in tandem with "alignItem": whereas "alignItem" controls the container, "alignSelf" aligns the specific item it is associated with
+          }}/>
+          <View style={{
+            backgroundColor: 'gold',
+            flex: 1
+          }}/>
+          <View style={{
+            backgroundColor: 'tomato',
+            flex: 1
+          }}/>
       </View>
       {/* <Text>Hello World!</Text>
       <Button 
@@ -63,14 +76,15 @@ export default function App() {
 }
 
 // Utilizing both style objects is possible using an array inside the element attribute. the attribute to the right will always take precedence over the attribute to its left.
-const containerStyle = {backgroundColor: "orange"}
+const containerStyle = {backgroundColor: "white"}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    // justifyContent: 'center',
+    alignItems: 'center', //this property aligns items along the secondary access (vertically)
+    justifyContent: 'center', //this aligns items across the primary axis (horizontally)
+    // flexDirection: 'row', //this aligns items horizontally
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
   },
 });
