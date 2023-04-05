@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Alert, Button, Text,TouchableHighlight, View, Image, SafeAreaView } from 'react-native';
-
+import { StyleSheet, Alert, Button, Text,TouchableHighlight, View, Image, SafeAreaView, Platform } from 'react-native';
+// SafeAreaView is an iOS only feature. Androids will need extra buffers 
 export default function App() {
 
   const handlePress = () => {
@@ -14,10 +14,10 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, containerStyle]}>
       <Text>Hello World!</Text>
       <Button 
-        color="orange"
+        color="blue"
         title="click me" 
         onPress={handleButton}
       />
@@ -36,6 +36,7 @@ export default function App() {
   );
 }
 
+// Utilizing both style objects is possible using an array inside the element attribute. the attribute to the right will always take precedence over the attribute to its left.
 const containerStyle = {backgroundColor: "orange"}
 
 const styles = StyleSheet.create({
@@ -44,5 +45,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
   },
 });
