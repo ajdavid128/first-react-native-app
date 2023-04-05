@@ -8,8 +8,9 @@ export default function App() {
   }
 
   const handleButton = () => {
-    Alert.alert("My Title", "My Message", [
-      {text: "Yes"}, {text: "No"}])
+    Alert.prompt("My title", "My message", text => console.log(text))
+    // Alert.alert("My Title", "My Message", [
+    //   {text: "Yes"}, {text: "No"}])
   }
 
   return (
