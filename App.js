@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Alert, Button, Text,TouchableHighlight, View, Image, SafeAreaView, Platform } from 'react-native';
+import { StyleSheet, Alert, Button, Text,TouchableHighlight, View, Image, SafeAreaView, Platform, Dimensions } from 'react-native';
 // SafeAreaView is an iOS only feature. Androids will need extra buffers 
 export default function App() {
+
+  console.log(Dimensions.get("screen"));
 
   const handlePress = () => {
     console.log("text pressed")
@@ -15,6 +17,13 @@ export default function App() {
 
   return (
     <SafeAreaView style={[styles.container, containerStyle]}>
+      <View style={{
+        backgroundColor: "blue",
+        width: '50%',
+        height: 70
+        }}>
+
+      </View>
       <Text>Hello World!</Text>
       <Button 
         color="blue"
