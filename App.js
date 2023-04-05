@@ -33,25 +33,43 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
+    <SafeAreaView style={styles}>
       <View style={{
-        backgroundColor: "dodgerblue",
+        backgroundColor: "white",
         flex: 1,
-        width: '100%',
-        height: orientation === 'landscape' ? '100%' : '30%',
+        flexDirection: "row",
+        justifyContent: "center", //primary axis
+        alignItems: "center", //secondary axis (this will override the SafeAreaView if flexWrap is not present)
+        // alignContent: "center", // this works in tandem with alignItems (this will override the SafeAreaView)
+        flexWrap: "wrap",
+        // width: '100%',
+        // height: orientation === 'landscape' ? '100%' : '30%',
         }}>
           <View style={{
             backgroundColor: 'dodgerblue',
-            flex: 1,
+            width: 100,
+            height: 100,
             // alignSelf: 'flex-start', //this is a property that works in tandem with "alignItem": whereas "alignItem" controls the container, "alignSelf" aligns the specific item it is associated with
           }}/>
           <View style={{
             backgroundColor: 'gold',
-            flex: 1
+            width: 100,
+            height: 100,
           }}/>
           <View style={{
             backgroundColor: 'tomato',
-            flex: 1
+            width: 100,
+            height: 100,
+          }}/>
+          <View style={{
+            backgroundColor: 'grey',
+            width: 100,
+            height: 100,
+          }}/>
+          <View style={{
+            backgroundColor: 'green',
+            width: 100,
+            height: 100,
           }}/>
       </View>
       {/* <Text>Hello World!</Text>
