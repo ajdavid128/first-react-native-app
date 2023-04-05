@@ -36,6 +36,8 @@ export default function App() {
   );
 }
 
+const containerStyle = {backgroundColor: "orange"}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
