@@ -19,12 +19,12 @@ export default function App() {
     <SafeAreaView style={[styles.container, containerStyle]}>
       <View style={{
         backgroundColor: "blue",
-        width: '50%',
-        height: 70
+        width: '100%',
+        height: '30%'
         }}>
 
       </View>
-      <Text>Hello World!</Text>
+      {/* <Text>Hello World!</Text>
       <Button 
         color="blue"
         title="click me" 
@@ -40,7 +40,7 @@ export default function App() {
       />
       </TouchableHighlight>
       <Text numberOfLines={1} onPress={handlePress}>This is a demonstration of how text can be truncated using the 'numberOfLines' attribute</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="auto" /> */}
     </SafeAreaView>
   );
 }
